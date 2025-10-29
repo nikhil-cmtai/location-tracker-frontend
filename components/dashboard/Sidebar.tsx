@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation';
 import { menuItems } from './menu';
 import { ChevronDown } from 'lucide-react';
 import { ChevronUp } from 'lucide-react';
+import Image from 'next/image';
 
 interface SidebarProps {
   isOpen: boolean;
@@ -56,16 +57,16 @@ export default function Sidebar({ isOpen }: SidebarProps) {
       `}
     >
       {/* Logo Section */}
-      <div className={`bg-[var(--primary-orange)] flex-shrink-0 transition-all duration-300 ${isOpen ? 'p-6' : 'p-4'}`}>
+      <div className={` flex-shrink-0 transition-all duration-300 ${isOpen ? 'p-6' : 'p-4'}`}>
         <div className={`flex items-center ${isOpen ? 'gap-2' : 'justify-center'}`}>
-          <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center flex-shrink-0">
-            <span className="text-[var(--primary-orange)] font-bold text-xl">ES</span>
-          </div>
           {isOpen && (
             <div className="text-white overflow-hidden">
-              <div className="font-bold text-lg leading-tight whitespace-nowrap">EVERONIC</div>
-              <div className="font-bold text-sm leading-tight whitespace-nowrap">SOLUTIONS</div>
+              <Image src="/logo.png" alt="Logo" width={300} height={100} />
             </div>
+          )}
+
+          {!isOpen && (
+            <Image src="/Favicon.png" alt="Logo" width={30} height={30} />
           )}
         </div>
       </div>
