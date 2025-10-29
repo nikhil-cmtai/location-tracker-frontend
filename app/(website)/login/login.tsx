@@ -4,7 +4,15 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaEnvelope, FaLock, FaEye, FaEyeSlash } from 'react-icons/fa';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
+
+const credentials = {
+  email: 'admin@locationtrack.in',
+  password: '123456'
+}
+
 const LoginPage: React.FC = () => {
+  const router = useRouter();
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
     email: '',
@@ -15,6 +23,12 @@ const LoginPage: React.FC = () => {
     e.preventDefault();
     // Handle login logic here
     console.log('Login attempt:', formData);
+    if (formData.email === credentials.email && formData.password === credentials.password) {
+      console.log('Login successful');
+      router.push('/dashboard');
+    } else {
+      console.log('Login failed');
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -139,6 +153,21 @@ const LoginPage: React.FC = () => {
                 Forgot password?
               </a>
             </motion.div>
+
+            <div
+              className="my-6 w-full rounded-lg bg-[var(--primary-orange-light)] border border-[var(--primary-orange)] px-5 py-3 flex flex-col items-center shadow-sm"
+            >
+              <div className="flex items-center gap-2 mb-1">
+                <span className="inline-block w-2 h-2 rounded-full bg-[var(--primary-orange)] animate-pulse"></span>
+                <span className="font-semibold text-[var(--primary-orange)] text-base">
+                  Demo Login
+                </span>
+              </div>
+              <div className="text-sm text-gray-700 text-center">
+                <span className="block my-0.5"><b>Email</b>: admin@locationtrack.in</span>
+                <span className="block my-0.5"><b>Password</b>: 123456</span>
+              </div>
+            </div>
 
             <motion.button
               whileHover={{ scale: 1.02 }}

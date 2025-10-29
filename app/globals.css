@@ -32,11 +32,17 @@
   --error: #EF4444;
   --info: #3B82F6;
 
-  /* Legacy support */
+  /* Legacy support for website components */
   --primary: #E8643F;
   --secondary: #1E3A5F;
   --accent: #FFD600;
   --white: #FFFFFF;
+  
+  --color-primary: #E8643F;
+  --color-secondary: #1E3A5F;
+  --color-accent: #FFD600;
+  --color-foreground: #1F2937;
+  --color-background: #FFFFFF;
 }
 
 body {
