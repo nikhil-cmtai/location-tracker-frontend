@@ -136,7 +136,7 @@ export const menuItems: MenuItem[] = [
       {
         id: 'owner-type',
         label: 'Owner Type',
-        href: '/dashboard/otc/owner-type',
+        href: '/dashboard/otc/vehicle-owner',
         icon: UserRound,
       },
       {
