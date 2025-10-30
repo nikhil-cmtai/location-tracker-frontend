@@ -14,14 +14,14 @@ export default function AddVltdManufacturerPage() {
   const handleSubmit = async (formData: VltdManufacturerFormData) => {
     try {
       await dispatch(addNewVltdManufacturer(formData)).unwrap();
-      router.push('/dashboard/masters/vlt-manufacturer');
+      router.push('/dashboard/otc/vltd-manufacturer');
     } catch (error) {
       console.error('Failed to add VLTD manufacturer:', error);
     }
   };
 
   const handleCancel = () => {
-    router.push('/dashboard/masters/vlt-manufacturer');
+    router.push('/dashboard/otc/vltd-manufacturer');
   };
 
   return (

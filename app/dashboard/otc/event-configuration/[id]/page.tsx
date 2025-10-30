@@ -45,14 +45,14 @@ export default function EditEventConfigurationPage() {
           ...formData,
         })
       ).unwrap();
-      router.push('/dashboard/masters/event-configuration');
+      router.push('/dashboard/otc/event-configuration');
     } catch (error) {
       console.error('Failed to update event configuration:', error);
     }
   };
 
   const handleCancel = () => {
-    router.push('/dashboard/masters/event-configuration');
+    router.push('/dashboard/otc/event-configuration');
   };
 
   if (status === 'loading' || !initialData) {

@@ -42,14 +42,14 @@ export default function EditEventCategoryPage() {
           ...formData,
         })
       ).unwrap();
-      router.push('/dashboard/masters/event-category');
+      router.push('/dashboard/otc/event-category');
     } catch (error) {
       console.error('Failed to update event category:', error);
     }
   };
 
   const handleCancel = () => {
-    router.push('/dashboard/masters/event-category');
+    router.push('/dashboard/otc/event-category');
   };
 
   if (status === 'loading' || !initialData) {

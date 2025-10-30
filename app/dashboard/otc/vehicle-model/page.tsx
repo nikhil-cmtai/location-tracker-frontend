@@ -125,7 +125,7 @@ export default function VehicleModelPage() {
 
             {/* Add New Model Button */}
             <Link
-              href="/dashboard/masters/vehicle-model/add"
+              href="/dashboard/otc/vehicle-model/add"
               className="bg-[var(--primary-orange)] hover:bg-[var(--primary-orange-hover)] text-white px-6 py-2 rounded-lg font-medium transition-colors whitespace-nowrap"
             >
               Add New Vehicle Model
@@ -181,7 +181,7 @@ export default function VehicleModelPage() {
                     </td>
                     <td className="px-6 py-4 text-sm">
                       <Link
-                        href={`/dashboard/masters/vehicle-model/${model._id}`}
+                        href={`/dashboard/otc/vehicle-model/${model._id}`}
                         className="text-[var(--primary-orange)] hover:text-[var(--primary-orange-hover)] transition-colors"
                       >
                         <Edit2 className="w-5 h-5" />

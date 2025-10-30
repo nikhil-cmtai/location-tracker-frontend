@@ -14,14 +14,14 @@ export default function AddVehicleManufacturerPage() {
   const handleSubmit = async (formData: VehicleManufacturerFormData) => {
     try {
       await dispatch(addNewVehicleMake(formData)).unwrap();
-      router.push('/dashboard/masters/vehicle-manufacturer');
+      router.push('/dashboard/otc/vehicle-manufacturer');
     } catch (error) {
       console.error('Failed to add vehicle manufacturer:', error);
     }
   };
 
   const handleCancel = () => {
-    router.push('/dashboard/masters/vehicle-manufacturer');
+    router.push('/dashboard/otc/vehicle-manufacturer');
   };
 
   return (

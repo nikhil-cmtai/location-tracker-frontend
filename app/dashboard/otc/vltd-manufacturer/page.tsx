@@ -94,7 +94,7 @@ export default function VltdManufacturerPage() {
 
             {/* Add New Manufacturer Button */}
             <Link
-              href="/dashboard/masters/vlt-manufacturer/add"
+              href="/dashboard/otc/vltd-manufacturer/add"
               className="bg-[var(--primary-orange)] hover:bg-[var(--primary-orange-hover)] text-white px-6 py-2 rounded-lg font-medium transition-colors whitespace-nowrap"
             >
               Add New Manufacturer
@@ -138,7 +138,7 @@ export default function VltdManufacturerPage() {
                     </td>
                     <td className="px-6 py-4 text-sm">
                       <Link
-                        href={`/dashboard/masters/vlt-manufacturer/${manufacturer._id}`}
+                        href={`/dashboard/otc/vltd-manufacturer/${manufacturer._id}`}
                         className="text-[var(--primary-orange)] hover:text-[var(--primary-orange-hover)] transition-colors"
                       >
                         <Edit2 className="w-5 h-5" />

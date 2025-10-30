@@ -44,14 +44,14 @@ export default function EditVehicleModelPage() {
         _id: modelId,
         ...formData
       })).unwrap();
-      router.push('/dashboard/masters/vehicle-model');
+      router.push('/dashboard/otc/vehicle-model');
     } catch (error) {
       console.error('Failed to update vehicle model:', error);
     }
   };
 
   const handleCancel = () => {
-    router.push('/dashboard/masters/vehicle-model');
+    router.push('/dashboard/otc/vehicle-model');
   };
 
   if (!initialData) {

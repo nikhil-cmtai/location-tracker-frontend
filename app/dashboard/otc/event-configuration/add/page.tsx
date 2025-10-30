@@ -14,14 +14,14 @@ export default function AddEventConfigurationPage() {
   const handleSubmit = async (formData: EventConfigurationFormData) => {
     try {
       await dispatch(addNewDeviceEvent(formData)).unwrap();
-      router.push('/dashboard/masters/event-configuration');
+      router.push('/dashboard/otc/event-configuration');
     } catch (error) {
       console.error('Failed to add event configuration:', error);
     }
   };
 
   const handleCancel = () => {
-    router.push('/dashboard/masters/event-configuration');
+    router.push('/dashboard/otc/event-configuration');
   };
 
   return <EventConfigurationForm onSubmit={handleSubmit} onCancel={handleCancel} />;

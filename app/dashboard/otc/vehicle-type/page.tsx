@@ -101,7 +101,7 @@ export default function VehicleTypePage() {
 
             {/* Add New Type Button */}
             <Link
-              href="/dashboard/masters/vehicle-type/add"
+              href="/dashboard/otc/vehicle-type/add"
               className="bg-[var(--primary-orange)] hover:bg-[var(--primary-orange-hover)] text-white px-6 py-2 rounded-lg font-medium transition-colors whitespace-nowrap"
             >
               Add New Vehicle Type
@@ -151,7 +151,7 @@ export default function VehicleTypePage() {
                     </td>
                     <td className="px-6 py-4 text-sm">
                       <Link
-                        href={`/dashboard/masters/vehicle-type/${type._id}`}
+                        href={`/dashboard/otc/vehicle-type/${type._id}`}
                         className="text-[var(--primary-orange)] hover:text-[var(--primary-orange-hover)] transition-colors"
                       >
                         <Edit2 className="w-5 h-5" />

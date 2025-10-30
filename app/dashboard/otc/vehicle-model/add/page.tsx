@@ -14,14 +14,14 @@ export default function AddVehicleModelPage() {
   const handleSubmit = async (formData: VehicleModelFormData) => {
     try {
       await dispatch(addNewVehicleModel(formData)).unwrap();
-      router.push('/dashboard/masters/vehicle-model');
+      router.push('/dashboard/otc/vehicle-model');
     } catch (error) {
       console.error('Failed to add vehicle model:', error);
     }
   };
 
   const handleCancel = () => {
-    router.push('/dashboard/masters/vehicle-model');
+    router.push('/dashboard/otc/vehicle-model');
   };
 
   return (

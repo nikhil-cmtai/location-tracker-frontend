@@ -40,14 +40,14 @@ export default function EditVehicleManufacturerPage() {
         _id: manufacturerId,
         ...formData
       })).unwrap();
-      router.push('/dashboard/masters/vehicle-manufacturer');
+      router.push('/dashboard/otc/vehicle-manufacturer');
     } catch (error) {
       console.error('Failed to update vehicle manufacturer:', error);
     }
   };
 
   const handleCancel = () => {
-    router.push('/dashboard/masters/vehicle-manufacturer');
+    router.push('/dashboard/otc/vehicle-manufacturer');
   };
 
   if (!initialData) {

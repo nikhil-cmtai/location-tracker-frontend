@@ -40,14 +40,14 @@ export default function EditVltdModelPage() {
         _id: modelId,
         ...formData
       })).unwrap();
-      router.push('/dashboard/masters/vltd-model');
+      router.push('/dashboard/otc/vltd-model');
     } catch (error) {
       console.error('Failed to update VLTD model:', error);
     }
   };
 
   const handleCancel = () => {
-    router.push('/dashboard/masters/vltd-model');
+    router.push('/dashboard/otc/vltd-model');
   };
 
   if (!initialData) {

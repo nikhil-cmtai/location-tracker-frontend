@@ -14,14 +14,14 @@ export default function AddVltdModelPage() {
   const handleSubmit = async (formData: VltdModelFormData) => {
     try {
       await dispatch(addNewVltdModel(formData)).unwrap();
-      router.push('/dashboard/masters/vltd-model');
+      router.push('/dashboard/otc/vltd-model');
     } catch (error) {
       console.error('Failed to add VLTD model:', error);
     }
   };
 
   const handleCancel = () => {
-    router.push('/dashboard/masters/vltd-model');
+    router.push('/dashboard/otc/vltd-model');
   };
 
   return (

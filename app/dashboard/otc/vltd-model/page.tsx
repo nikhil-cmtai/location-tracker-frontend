@@ -101,7 +101,7 @@ export default function VltdModelPage() {
 
             {/* Add New Model Button */}
             <Link
-              href="/dashboard/masters/vltd-model/add"
+              href="/dashboard/otc/vltd-model/add"
               className="bg-[var(--primary-orange)] hover:bg-[var(--primary-orange-hover)] text-white px-6 py-2 rounded-lg font-medium transition-colors whitespace-nowrap"
             >
               Add New VLTD Model
@@ -151,7 +151,7 @@ export default function VltdModelPage() {
                     </td>
                     <td className="px-6 py-4 text-sm">
                       <Link
-                        href={`/dashboard/masters/vltd-model/${model._id}`}
+                        href={`/dashboard/otc/vltd-model/${model._id}`}
                         className="text-[var(--primary-orange)] hover:text-[var(--primary-orange-hover)] transition-colors"
                       >
                         <Edit2 className="w-5 h-5" />

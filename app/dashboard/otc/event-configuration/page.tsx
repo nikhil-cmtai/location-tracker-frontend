@@ -103,7 +103,7 @@ export default function EventConfigurationPage() {
 
             {/* Add New Button */}
             <Link
-              href="/dashboard/masters/event-configuration/add"
+              href="/dashboard/otc/event-configuration/add"
               className="bg-[var(--primary-orange)] hover:bg-[var(--primary-orange-hover)] text-white px-6 py-2 rounded-lg font-medium transition-colors whitespace-nowrap"
             >
               Add New Event
@@ -171,7 +171,7 @@ export default function EventConfigurationPage() {
                     </td>
                     <td className="px-6 py-4 text-sm">
                       <Link
-                        href={`/dashboard/masters/event-configuration/${event._id}`}
+                        href={`/dashboard/otc/event-configuration/${event._id}`}
                         className="text-[var(--primary-orange)] hover:text-[var(--primary-orange-hover)] transition-colors"
                       >
                         <Edit2 className="w-5 h-5" />

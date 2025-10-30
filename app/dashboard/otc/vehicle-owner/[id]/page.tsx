@@ -42,14 +42,14 @@ export default function EditVehicleOwnerPage() {
           ...formData,
         })
       ).unwrap();
-      router.push('/dashboard/masters/vehicle-owner');
+      router.push('/dashboard/otc/vehicle-owner');
     } catch (error) {
       console.error('Failed to update vehicle owner:', error);
     }
   };
 
   const handleCancel = () => {
-    router.push('/dashboard/masters/vehicle-owner');
+    router.push('/dashboard/otc/vehicle-owner');
   };
 
   if (status === 'loading' || !initialData) {

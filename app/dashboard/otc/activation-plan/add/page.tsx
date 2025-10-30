@@ -14,14 +14,14 @@ export default function AddPlanPage() {
   const handleSubmit = async (formData: PlanFormData) => {
     try {
       await dispatch(addNewPlan(formData)).unwrap();
-      router.push('/dashboard/masters/plans');
+      router.push('/dashboard/otc/activation-plan');
     } catch (error) {
       console.error('Failed to add plan:', error);
     }
   };
 
   const handleCancel = () => {
-    router.push('/dashboard/masters/plans');
+    router.push('/dashboard/otc/activation-plan');
   };
 
   return (

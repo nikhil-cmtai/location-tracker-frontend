@@ -14,14 +14,14 @@ export default function AddVehicleTypePage() {
   const handleSubmit = async (formData: VehicleTypeFormData) => {
     try {
       await dispatch(createVehicleType(formData)).unwrap();
-      router.push('/dashboard/masters/vehicle-type');
+      router.push('/dashboard/otc/vehicle-type');
     } catch (error) {
       console.error('Failed to add vehicle type:', error);
     }
   };
 
   const handleCancel = () => {
-    router.push('/dashboard/masters/vehicle-type');
+    router.push('/dashboard/otc/vehicle-type');
   };
 
   return (

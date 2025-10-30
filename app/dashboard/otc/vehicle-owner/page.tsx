@@ -94,7 +94,7 @@ export default function VehicleOwnerPage() {
 
             {/* Add New Owner Type Button */}
             <Link
-              href="/dashboard/masters/vehicle-owner/add"
+              href="/dashboard/otc/vehicle-owner/add"
               className="bg-[var(--primary-orange)] hover:bg-[var(--primary-orange-hover)] text-white px-6 py-2 rounded-lg font-medium transition-colors whitespace-nowrap"
             >
               Add New Owner Type
@@ -144,7 +144,7 @@ export default function VehicleOwnerPage() {
                     </td>
                     <td className="px-6 py-4 text-sm">
                       <Link
-                        href={`/dashboard/masters/vehicle-owner/${owner._id}`}
+                        href={`/dashboard/otc/vehicle-owner/${owner._id}`}
                         className="text-[var(--primary-orange)] hover:text-[var(--primary-orange-hover)] transition-colors"
                       >
                         <Edit2 className="w-5 h-5" />

@@ -40,14 +40,14 @@ export default function EditVehicleTypePage() {
         id: typeId,
         data: formData
       })).unwrap();
-      router.push('/dashboard/masters/vehicle-type');
+      router.push('/dashboard/otc/vehicle-type');
     } catch (error) {
       console.error('Failed to update vehicle type:', error);
     }
   };
 
   const handleCancel = () => {
-    router.push('/dashboard/masters/vehicle-type');
+    router.push('/dashboard/otc/vehicle-type');
   };
 
   if (!initialData) {

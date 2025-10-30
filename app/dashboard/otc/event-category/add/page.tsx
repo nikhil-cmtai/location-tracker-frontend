@@ -14,14 +14,14 @@ export default function AddEventCategoryPage() {
   const handleSubmit = async (formData: EventCategoryFormData) => {
     try {
       await dispatch(addNewEventCategory(formData)).unwrap();
-      router.push('/dashboard/masters/event-category');
+      router.push('/dashboard/otc/event-category');
     } catch (error) {
       console.error('Failed to add event category:', error);
     }
   };
 
   const handleCancel = () => {
-    router.push('/dashboard/masters/event-category');
+    router.push('/dashboard/otc/event-category');
   };
 
   return <EventCategoryForm onSubmit={handleSubmit} onCancel={handleCancel} />;

@@ -94,7 +94,7 @@ export default function EventCategoryPage() {
 
             {/* Add New Button */}
             <Link
-              href="/dashboard/masters/event-category/add"
+              href="/dashboard/otc/event-category/add"
               className="bg-[var(--primary-orange)] hover:bg-[var(--primary-orange-hover)] text-white px-6 py-2 rounded-lg font-medium transition-colors whitespace-nowrap"
             >
               Add New Category
@@ -144,7 +144,7 @@ export default function EventCategoryPage() {
                     </td>
                     <td className="px-6 py-4 text-sm">
                       <Link
-                        href={`/dashboard/masters/event-category/${category._id}`}
+                        href={`/dashboard/otc/event-category/${category._id}`}
                         className="text-[var(--primary-orange)] hover:text-[var(--primary-orange-hover)] transition-colors"
                       >
                         <Edit2 className="w-5 h-5" />

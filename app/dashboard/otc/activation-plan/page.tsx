@@ -101,7 +101,7 @@ export default function PlansPage() {
 
             {/* Add New Plan Button */}
             <Link
-              href="/dashboard/masters/plans/add"
+              href="/dashboard/otc/activation-plan/add"
               className="bg-[var(--primary-orange)] hover:bg-[var(--primary-orange-hover)] text-white px-6 py-2 rounded-lg font-medium transition-colors whitespace-nowrap"
             >
               Add New Plan
@@ -163,7 +163,7 @@ export default function PlansPage() {
                     </td>
                     <td className="px-6 py-4 text-sm">
                       <Link
-                        href={`/dashboard/masters/plans/${plan._id}`}
+                        href={`/dashboard/otc/activation-plan/${plan._id}`}
                         className="text-[var(--primary-orange)] hover:text-[var(--primary-orange-hover)] transition-colors"
                       >
                         <Edit2 className="w-5 h-5" />

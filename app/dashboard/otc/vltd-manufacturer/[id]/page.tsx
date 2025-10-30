@@ -40,14 +40,14 @@ export default function EditVltdManufacturerPage() {
         _id: manufacturerId,
         ...formData
       })).unwrap();
-      router.push('/dashboard/masters/vlt-manufacturer');
+      router.push('/dashboard/otc/vltd-manufacturer');
     } catch (error) {
       console.error('Failed to update VLTD manufacturer:', error);
     }
   };
 
   const handleCancel = () => {
-    router.push('/dashboard/masters/vlt-manufacturer');
+    router.push('/dashboard/otc/vltd-manufacturer');
   };
 
   if (!initialData) {

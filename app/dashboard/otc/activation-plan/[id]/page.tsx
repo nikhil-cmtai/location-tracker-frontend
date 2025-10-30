@@ -42,14 +42,14 @@ export default function EditPlanPage() {
         id: planId,
         ...formData
       })).unwrap();
-      router.push('/dashboard/masters/plans');
+      router.push('/dashboard/otc/activation-plan');
     } catch (error) {
       console.error('Failed to update plan:', error);
     }
   };
 
   const handleCancel = () => {
-    router.push('/dashboard/masters/plans');
+    router.push('/dashboard/otc/activation-plan');
   };
 
   if (!initialData) {

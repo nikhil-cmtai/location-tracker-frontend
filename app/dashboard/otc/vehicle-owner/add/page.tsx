@@ -14,14 +14,14 @@ export default function AddVehicleOwnerPage() {
   const handleSubmit = async (formData: VehicleOwnerFormData) => {
     try {
       await dispatch(addNewOwnerType(formData)).unwrap();
-      router.push('/dashboard/masters/vehicle-owner');
+      router.push('/dashboard/otc/vehicle-owner');
     } catch (error) {
       console.error('Failed to add vehicle owner:', error);
     }
   };
 
   const handleCancel = () => {
-    router.push('/dashboard/masters/vehicle-owner');
+    router.push('/dashboard/otc/vehicle-owner');
   };
 
   return <VehicleOwnerForm onSubmit={handleSubmit} onCancel={handleCancel} />;
