@@ -108,10 +108,10 @@ export default function Header({ onToggleSidebar, isSidebarOpen }: HeaderProps) 
                 <div className="absolute right-0 mt-2 w-56 bg-white rounded-lg shadow-lg border border-[var(--border-light)] z-20">
                   <div className="p-4 border-b border-[var(--border-light)]">
                     <div className="font-semibold text-[var(--text-primary)]">
-                      Name of User
+                      Siddarth Pathak
                     </div>
                     <div className="text-sm text-[var(--text-secondary)]">
-                      Designation
+                      SuperAdmin
                     </div>
                   </div>
                   <nav className="py-2">
