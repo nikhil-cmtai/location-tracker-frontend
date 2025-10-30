@@ -1,7 +1,7 @@
 'use client';
 
-import React, { useState } from 'react';
-import { Search, FileText, FileSpreadsheet, Printer, ChevronLeft, ChevronRight, Edit2 } from 'lucide-react';
+import { useState } from 'react';
+import { Search, ChevronLeft, ChevronRight, Edit2 } from 'lucide-react';
 import Link from 'next/link';
 import ExportButtons from '@/components/dashboard/ExportButtons';
 
@@ -146,6 +146,9 @@ export default function VehiclesPage() {
             <thead className="bg-[var(--navy-dark)] text-white">
               <tr>
                 <th className="px-6 py-4 text-left text-sm font-semibold">
+                  S.No
+                </th>
+                <th className="px-6 py-4 text-left text-sm font-semibold">
                   Customer Name
                 </th>
                 <th className="px-6 py-4 text-left text-sm font-semibold">
@@ -179,8 +182,11 @@ export default function VehiclesPage() {
             </thead>
             <tbody className="divide-y divide-[var(--border-light)]">
               {currentVehicles.length > 0 ? (
-                currentVehicles.map((vehicle) => (
+                currentVehicles.map((vehicle, index) => (
                   <tr key={vehicle.id} className="hover:bg-gray-50 transition-colors">
+                    <td className="px-6 py-4 text-sm text-[var(--text-primary)] font-medium">
+                      {startIndex + index + 1}
+                    </td>
                     <td className="px-6 py-4 text-sm text-[var(--text-primary)]">
                       {vehicle.customerName}
                     </td>
@@ -228,7 +234,7 @@ export default function VehiclesPage() {
                 ))
               ) : (
                 <tr>
-                  <td colSpan={10} className="px-6 py-8 text-center text-[var(--text-secondary)]">
+                  <td colSpan={11} className="px-6 py-8 text-center text-[var(--text-secondary)]">
                     No vehicles found
                   </td>
                 </tr>

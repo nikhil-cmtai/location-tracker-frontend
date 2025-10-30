@@ -3,8 +3,6 @@
 import * as XLSX from "xlsx";
 import jsPDF from "jspdf";
 import autoTable, { UserOptions } from "jspdf-autotable";
-import { useSelector } from "react-redux";
-import { RootState } from "@/lib/redux/store";
 import { Printer, FileText, FileSpreadsheet } from "lucide-react";
 
 interface ExportButtonsProps<T extends object> {
@@ -41,8 +39,8 @@ export default function ExportButtons<T extends object>({
   filename,
   allData,
 }: ExportButtonsProps<T>) {
-  const user = useSelector((state: RootState) => state.user.user);
-  const userName = user ? user.email : 'N/A';
+  // TODO: Replace with actual logged-in user when auth is implemented
+  const userName = 'Administrator';
 
   const exportData = allData && allData.length > 0 ? allData : data;
 
