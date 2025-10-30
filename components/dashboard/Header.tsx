@@ -87,10 +87,10 @@ export default function Header({ onToggleSidebar, isSidebarOpen }: HeaderProps) 
             >
               <div className="text-right hidden sm:block">
                 <div className="text-sm font-medium text-[var(--text-primary)] leading-tight">
-                  Name of User
+                  Siddarth Pathak
                 </div>
                 <div className="text-xs text-[var(--text-secondary)] leading-tight">
-                  Designation
+                  Super Admin
                 </div>
               </div>
               <div className="w-11 h-11 rounded-full bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center overflow-hidden flex-shrink-0">
