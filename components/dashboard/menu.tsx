@@ -329,7 +329,7 @@ export const menuItems: MenuItem[] = [
       },
       {
         id: 'current-status',
-        label: 'Current Status',
+        label: 'Vehicle Current Status',
         href: '/dashboard/reports/current-status',
         icon: AlertCircle,
       },

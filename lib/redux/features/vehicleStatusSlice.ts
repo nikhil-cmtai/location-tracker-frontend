@@ -24,9 +24,9 @@ export interface VehicleStatus {
 }
 
 interface FetchParams {
-    vehicleNumber: string;
-    startDate: string;
-    endDate: string;
+    vehicleNumber?: string;
+    startDate?: string;
+    endDate?: string;
 }
 
 interface VehicleStatusState {
@@ -137,13 +137,18 @@ const API_BASE_URL = `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/reports`;
 
 export const fetchVehicleStatus = createAsyncThunk(
   'vehicleStatus/fetchVehicleStatus',
-  async (params: FetchParams, { rejectWithValue }) => {
+  async (params: FetchParams | undefined, { rejectWithValue }) => {
     try {
+      const requestParams: any = { includeLocation: true };
+      if (params?.vehicleNumber) requestParams.vehicleNumber = params.vehicleNumber;
+      if (params?.startDate) requestParams.startDate = params.startDate;
+      if (params?.endDate) requestParams.endDate = params.endDate;
+      
       const response = await axios.get(`${API_BASE_URL}/vehiclecurrentstatus`, {
-        params: { ...params, includeLocation: true },
+        params: requestParams,
         withCredentials: true,
       });
-      toast.success(`${response.data.count || response.data.total} vehicle current status records found!`);
+      toast.success(`${response.data.count || response.data.total || response.data.data?.length || 0} vehicle current status records found!`);
       return response.data.data;
     } catch (error: any) {
       const message = error.response?.data?.message || 'Failed to fetch vehicle current status';

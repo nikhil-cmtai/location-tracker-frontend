@@ -13,6 +13,7 @@ import vltDeviceReducer from './features/vltDeviceSlice'
 import simReducer from './features/simSlice'
 import crowdReducer from './features/crowdSlice'
 import detailedIdlingReducer from './features/detailedIdilingSlice'
+import detailedStoppageReducer from './features/detailedStoppageSlice'
 import distanceReportReducer from './features/distanceReportSlice'
 import eventCategoryReducer from './features/eventCategorySlice'
 import eventReducer from './features/event-configurationSlice'
@@ -36,6 +37,10 @@ import reactivationPlanReducer from './features/re-activationSlice'
 import renewalPlanReducer from './features/renewalSlice'
 import authReducer from './features/authSlice'
 import roleReducer from './features/roleSlice'
+import utilizationReportReducer from './features/utilizationReportSlice'
+import overSpeedReducer from './features/overSpeedSlice'
+import nearbyVehiclesReducer from './features/nearbyVehiclesSlice'
+import activationCheckReducer from './features/activationCheckSlice'
 
 export const store = configureStore({
   reducer: {
@@ -53,6 +58,7 @@ export const store = configureStore({
     sim: simReducer,
     crowd: crowdReducer,
     detailedIdling: detailedIdlingReducer,
+    detailedStoppage: detailedStoppageReducer,
     distanceReport: distanceReportReducer,
     eventCategory: eventCategoryReducer,
     event: eventReducer,
@@ -76,6 +82,10 @@ export const store = configureStore({
     renewalPlan: renewalPlanReducer,
     auth: authReducer,
     role: roleReducer,
+    utilizationReport: utilizationReportReducer,
+    overSpeed: overSpeedReducer,
+    nearbyVehicles: nearbyVehiclesReducer,
+    activationCheck: activationCheckReducer,
   },
 })
 

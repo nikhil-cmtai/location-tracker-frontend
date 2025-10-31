@@ -2,18 +2,15 @@ import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 
-export interface DetailedIdlingEventDetail {
+export interface DetailedStoppageEventDetail {
     vehicleNumber: string;
-    idlingStartTime: string;
-    idlingEndTime: string;
-    totalStoppageDuration: string;
-    idlingLocation: string;
-    stoppageStartTime: string;
-    stoppageEndTime: string;
-    stoppageLocation: string;
+    stopStartTime: string;
+    stopEndTime: string;
+    totalStopDuration: string;
+    stopLocation: string;
 }
 
-export interface DetailedIdlingSummary {
+export interface DetailedStoppageSummary {
     sNo: number;
     zoneRegion: string;
     depotCustomer: string;
@@ -25,11 +22,11 @@ export interface DetailedIdlingSummary {
     stoppageEndTime: string;
     totalStoppageDuration: string;
     stoppageLocation: string;
-    details: DetailedIdlingEventDetail[];
+    details: DetailedStoppageEventDetail[];
 }
 
-interface DetailedIdlingSummaryState {
-    reportData: DetailedIdlingSummary[];
+interface DetailedStoppageSummaryState {
+    reportData: DetailedStoppageSummary[];
     status: 'idle' | 'loading' | 'succeeded' | 'failed';
     error: string | null;
 }
@@ -41,7 +38,7 @@ interface FetchParams {
     vehicleNumber?: string;
 }
 
-const initialState: DetailedIdlingSummaryState = {
+const initialState: DetailedStoppageSummaryState = {
     reportData: [],
     status: 'idle',
     error: null,
@@ -49,11 +46,11 @@ const initialState: DetailedIdlingSummaryState = {
 
 const API_BASE_URL = `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/reports`;
 
-export const fetchDetailedIdlingSummary = createAsyncThunk(
-  'idlingdetailed',
+export const fetchDetailedStoppageSummary = createAsyncThunk(
+  'detailedStoppage/fetchDetailedStoppageSummary',
   async (params: FetchParams, { rejectWithValue }) => {
     try {
-      const response = await axios.get(`${API_BASE_URL}/idlingdetailed`, { params, withCredentials: true });
+      const response = await axios.get(`${API_BASE_URL}/stopdetailed`, { params, withCredentials: true });
       toast.success(response.data.message);
       return response.data.data;
     } catch (error: any) {
@@ -64,11 +61,11 @@ export const fetchDetailedIdlingSummary = createAsyncThunk(
   }
 );
 
-const detailedIdlingSummarySlice = createSlice({
-    name: 'detailedIdlingSummary',
+const detailedStoppageSummarySlice = createSlice({
+    name: 'detailedStoppageSummary',
     initialState,
     reducers: {
-        clearDetailedIdlingSummary: (state) => {
+        clearDetailedStoppageSummary: (state) => {
             state.reportData = [];
             state.status = 'idle';
             state.error = null;
@@ -76,21 +73,22 @@ const detailedIdlingSummarySlice = createSlice({
     },
     extraReducers: (builder) => {
         builder
-            .addCase(fetchDetailedIdlingSummary.pending, (state) => {
+            .addCase(fetchDetailedStoppageSummary.pending, (state) => {
                 state.status = 'loading';
                 state.reportData = [];
                 state.error = null;
             })
-            .addCase(fetchDetailedIdlingSummary.fulfilled, (state, action: PayloadAction<DetailedIdlingSummary[]>) => {
+            .addCase(fetchDetailedStoppageSummary.fulfilled, (state, action: PayloadAction<DetailedStoppageSummary[]>) => {
                 state.status = 'succeeded';
                 state.reportData = action.payload;
             })
-            .addCase(fetchDetailedIdlingSummary.rejected, (state, action) => {
+            .addCase(fetchDetailedStoppageSummary.rejected, (state, action) => {
                 state.status = 'failed';
                 state.error = action.payload as string;
             });
     }
 });
 
-export const { clearDetailedIdlingSummary } = detailedIdlingSummarySlice.actions;
-export default detailedIdlingSummarySlice.reducer;
+export const { clearDetailedStoppageSummary } = detailedStoppageSummarySlice.actions;
+export default detailedStoppageSummarySlice.reducer;
+
